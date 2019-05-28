@@ -11,9 +11,6 @@ git
 gitk
 
 
-
-
-
 git config --global user.name "KDawid"
 git config --global user.email "kdawid93@gmail.com"
 
