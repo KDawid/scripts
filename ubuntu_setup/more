@@ -14,7 +14,7 @@ gitk
 git config --global user.name "KDawid"
 git config --global user.email "kdawid93@gmail.com"
 
-
+https://help.github.com/en/articles/connecting-to-github-with-ssh
 
 
 https://itsfoss.com/check-laptop-cpu-temperature-ubuntu/
