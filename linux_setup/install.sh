@@ -1,37 +1,42 @@
 #!/bin/bash
 
-echo Installing cowsay...
+source pretty_print.sh
+
+pretty_title "Installing cowsay..."
 sudo apt-get install cowsay
 
-echo Installing sl...
+pretty_title "Installing sl..."
 sudo apt-get install sl
 
-echo Installing htop...
+pretty_title "Installing htop..."
 sudo apt-get install htop
 
-echo Installing vim...
+pretty_title "Installing vim..."
 sudo apt-get install vim
 
-echo Installing git...
+pretty_title "Installing git..."
 sudo apt-get install git
 
-echo Installing gitk...
+pretty_title "Installing gitk..."
 sudo apt-get install gitk
 
-echo Installing vlc...
+pretty_title "Installing vlc..."
 sudo apt-get install vlc
 
-echo Installing maven...
+pretty_title "Installing maven..."
 sudo apt-get install maven
 
-echo Installing geany...
+pretty_title "Installing geany..."
 sudo apt-get install geany
 
-echo Installing openssh...
+pretty_title "Installing openssh..."
 sudo apt-get install openssh-client
 sudo apt-get install openssh-server
 
-echo Update...
+pretty_title "Installing vcgencmd..."
+sudo pip3 install git+https://github.com/nicmcd/vcgencmd.git
+
+pretty_title "Update..."
 sudo apt-get update
 
-echo Done.
+pretty_title "Done."

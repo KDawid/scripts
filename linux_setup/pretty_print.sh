@@ -22,11 +22,22 @@ function title_line {
 	printf "#$(spaces $PREFIX)$*$(spaces $SUFFIX)#"
 }
 
+function check_lenght {
+	export WIDTH=50
+	length=$(expr length $*)
+	if [ $length -gt $WIDTH ]
+	then
+		export WIDTH=$(($length+4))
+	fi
+}
+
 function pretty_title {
+	check_lenght "$*"
+	
 	printf "$(hashtags)\n"
 	printf "$(title_line $*)\n"
 	printf "$(hashtags)\n"
+	export WIDTH=50
 }
 
-pretty_title "Szia cica! Van gazdád?"
-
+pretty_title $1
