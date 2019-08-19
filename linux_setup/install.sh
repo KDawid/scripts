@@ -33,8 +33,16 @@ pretty_title "Installing openssh..."
 sudo apt-get install openssh-client
 sudo apt-get install openssh-server
 
+pretty_title "Installing python..."
+sudo apt-get install python3
+
 pretty_title "Installing vcgencmd..."
 sudo pip3 install git+https://github.com/nicmcd/vcgencmd.git
+
+pretty_title "Installing stress..."
+sudo apt-get install stress
+
+
 
 pretty_title "Update..."
 sudo apt-get update
