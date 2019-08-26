@@ -42,7 +42,15 @@ sudo pip3 install git+https://github.com/nicmcd/vcgencmd.git
 pretty_title "Installing stress..."
 sudo apt-get install stress
 
+pretty_title "Installing eclipse..."
+sudo apt-get install eclipse
 
+pretty_title "Installing pulse..."
+sudo apt-get install pulseaudio pulseaudio-module-bluetooth
+
+# https://dtcooper.github.io/raspotify/
+pretty_title "Installing raspotify..."
+curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
 
 pretty_title "Update..."
 sudo apt-get update
