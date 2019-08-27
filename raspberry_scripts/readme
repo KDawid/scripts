@@ -1,0 +1,22 @@
+Bluetooth speaker
+
+https://raspberrypi.stackexchange.com/questions/47708/setup-raspberry-pi-3-as-bluetooth-speaker
+
+curl -s https://raw.githubusercontent.com/lukasjapan/bt-speaker/master/install.sh | bash
+
+This can help to play music on bluetooth
+https://github.com/lukasjapan/bt-speaker
+
+for mp3 use mpg123
+https://askubuntu.com/questions/115369/how-to-play-mp3-files-from-the-command-line
+
+Good summary but not perfect solution
+http://youness.net/raspberry-pi/how-to-connect-bluetooth-headset-or-speaker-to-raspberry-pi-3
+
+Change output:
+https://raspberrypi.stackexchange.com/questions/44/why-is-my-audio-sound-output-not-working
+omxplayer -o <output> <file>
+where output
+	hdmi
+	local
+	both (seems not working)

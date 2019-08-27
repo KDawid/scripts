@@ -53,6 +53,6 @@ pretty_title "Installing raspotify..."
 curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
 
 pretty_title "Update..."
-sudo apt-get update
+sudo apt update && sudo apt upgrade
 
 pretty_title "Done."
