@@ -1,4 +1,22 @@
-Bluetooth speaker
+#####################
+# Bluetooth speaker #
+#####################
+
+How to change analog to bluetooth
+ - Turn on bluetooth
+ - right click to sound icon, choose JBL Flip 4
+ - start music
+
+How to change bluetooth to anolog
+ - Turn off bluetooth
+
+Hint:
+ - Raspotify still does not work on bluetooth
+
+
+#############################################
+# Historical methods (might help sometimes) #
+#############################################
 
 https://raspberrypi.stackexchange.com/questions/47708/setup-raspberry-pi-3-as-bluetooth-speaker
 
