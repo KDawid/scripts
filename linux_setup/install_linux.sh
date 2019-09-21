@@ -1,6 +1,9 @@
 #!/bin/bash
 
 source pretty_print.sh
+echo
+pretty_title "INSTALL BASE PACKAGES"
+echo
 
 pretty_title "Installing cowsay..."
 sudo apt-get install cowsay
@@ -51,6 +54,10 @@ sudo apt-get install pulseaudio pulseaudio-module-bluetooth
 # https://dtcooper.github.io/raspotify/
 pretty_title "Installing raspotify..."
 curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
+
+pretty_title "Installing audio driver..."
+sudo apt-get install alsa-utils
+sudo modprobe snd_bcm2835
 
 pretty_title "Update..."
 sudo apt update && sudo apt upgrade

@@ -24,20 +24,23 @@ function title_line {
 
 function check_lenght {
 	export WIDTH=50
-	length=$(expr length $*)
+	length=$(echo $@ | wc -c )
 	if [ $length -gt $WIDTH ]
 	then
-		export WIDTH=$(($length+4))
+		if [ $((length%2)) -eq 1 ]
+		then
+			export WIDTH=$(($length+5))
+		else
+			export WIDTH=$(($length+4))
+		fi
 	fi
 }
 
 function pretty_title {
-	check_lenght "$*"
+	check_lenght $@
 	
 	printf "$(hashtags)\n"
 	printf "$(title_line $*)\n"
 	printf "$(hashtags)\n"
 	export WIDTH=50
 }
-
-pretty_title $1

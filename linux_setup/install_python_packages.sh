@@ -1,6 +1,9 @@
 #!/bin/bash
 
 source pretty_print.sh
+echo
+pretty_title "INSTALL PYTHON PACKAGES"
+echo
 
 pretty_title "Installing matplotlib..."
 pip3 install matplotlib
