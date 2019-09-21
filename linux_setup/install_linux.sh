@@ -59,6 +59,9 @@ pretty_title "Installing audio driver..."
 sudo apt-get install alsa-utils
 sudo modprobe snd_bcm2835
 
+pretty_title "Installing xclip..."
+sudo apt-get install xclip
+
 pretty_title "Update..."
 sudo apt update && sudo apt upgrade
 
