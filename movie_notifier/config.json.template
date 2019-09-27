@@ -1,0 +1,22 @@
+{
+  "chromeDriverPath": "<LOCATION OF CHROMEDRIVER>",
+
+  "pickleFile": "<TOKEN FILE, E.G. 'token.pickle'>",
+  "credentialsFile": "<CREDENTIALS FILE, E.G. 'credentials.json'>",
+
+  "imaxUrl": "https://www.cinemacity.hu/imax#/buy-tickets-by-cinema?in-cinema=1132&at=%s&view-mode=list",
+
+  "userId": "<YOUR ID, E.G. 'me'>",
+  "userEmail": "<YOUR E-MAIL>",
+  "recipients": [
+    "<E-MAIL ADDRESS OF FIRST RECIPIENT>",
+    "<E-MAIL ADDRESS OF SECOND RECIPIENT>"
+  ],
+
+  "movieTitle": "<KEYWORD OF THE MOVIE>",
+  "premierDate": "<PREMIER DATE (YYYY-MM-DD)>",
+
+  "subject": "FOUND MOVIE %s",
+  "bodyText": "This movie is available now.",
+  "htmlBody": "<html><body><pre style=\"font: monospace;font-size:15px\"><b>%s</b></pre></br><a href=%s>You can book seats here</a></body></html>"
+}
