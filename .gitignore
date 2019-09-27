@@ -1,0 +1,5 @@
+/movie_notifier/config.json
+/movie_notifier/credentials.json
+/movie_notifier/token.pickle
+/movie_notifier/.idea/
+/movie_notifier/__pycache__/
