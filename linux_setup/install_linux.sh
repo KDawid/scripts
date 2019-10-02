@@ -62,6 +62,11 @@ sudo modprobe snd_bcm2835
 pretty_title "Installing xclip..."
 sudo apt-get install xclip
 
+pretty_title "Installing selenium for python..."
+sudo apt-get install python-selenium
+sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4
+sudo apt-get install default-jdk 
+
 pretty_title "Update..."
 sudo apt update && sudo apt upgrade
 

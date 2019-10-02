@@ -11,6 +11,7 @@ class EmailSender:
     def __init__(self, config):
         self.config = config
 
+		# If modifying these scopes, delete the file token.pickle.
         self.SCOPES = ['https://mail.google.com/']
 
     def get_credentials(self):
