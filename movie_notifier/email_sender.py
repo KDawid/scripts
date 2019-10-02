@@ -11,7 +11,7 @@ class EmailSender:
     def __init__(self, config):
         self.config = config
 
-		# If modifying these scopes, delete the file token.pickle.
+        # If modifying these scopes, delete the file token.pickle.
         self.SCOPES = ['https://mail.google.com/']
 
     def get_credentials(self):
@@ -51,7 +51,8 @@ class EmailSender:
 
         service = build('gmail', 'v1', credentials=creds)
 
-        user_id = self.config.get_user_id
+        user_id = self.config.get_user_id()
+        print(user_id)
         sender = self.config.get_user_email()
         recipients = ','.join(self.config.get_recipients())
         subject = self.config.get_subject() % self.config.get_movie_title().upper()
