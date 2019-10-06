@@ -55,6 +55,9 @@ sudo apt-get install pulseaudio pulseaudio-module-bluetooth
 pretty_title "Installing raspotify..."
 curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
 
+pretty_title "Installing audio maria db..."
+sudo apt-get install mariadb-server
+
 pretty_title "Installing audio driver..."
 sudo apt-get install alsa-utils
 sudo modprobe snd_bcm2835

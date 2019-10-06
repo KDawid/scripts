@@ -26,3 +26,7 @@ psensor
 fortune
 
 https://askubuntu.com/questions/16428/showing-a-cowsay-fortune-in-every-new-terminal-session
+
+SQL settings:
+- GRANT ALL PRIVILEGES on *.* to 'root'@'localhost' IDENTIFIED BY '<password>';
+- FLUSH PRIVILEGES;

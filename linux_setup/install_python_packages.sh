@@ -53,4 +53,7 @@ sudo pip3 install virtualenv
 pretty_title "Installing google..."
 sudo pip3 install google
 
+pretty_title "Installing mysql..."
+sudo pip3 install PyMySQL
+
 pretty_title "Done."

@@ -4,3 +4,5 @@
 /movie_notifier/.idea/
 /movie_notifier/__pycache__/
 
+/stock_price_prediction/config.json
+/stock_price_prediction/__pycache__/

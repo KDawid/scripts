@@ -1,0 +1,7 @@
+{
+    "API_KEY": "<your API key>",
+	"host": "<HOST FOR DB>",
+    "user": "<DB USER>",
+    "passwd": "<DB password>",
+    "database": "<Table name>"
+}
