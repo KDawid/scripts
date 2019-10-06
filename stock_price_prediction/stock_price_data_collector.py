@@ -9,14 +9,7 @@ class StockPriceDataCollector:
             config = json.load(f)
         self.API_KEY = config['API_KEY']
 
-        self.STOCKS = {
-            'apple': 'AAPL',
-            'microsoft': 'MFST',
-            'facebook': 'FB',
-            'ibm': 'IBM',
-            'ericsson': 'ERIC',
-            'sony': 'SNE'
-        }
+        self.STOCKS = config['stocks']
 
     def get_data(self, stock):
         if stock not in self.STOCKS:

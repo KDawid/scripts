@@ -3,5 +3,15 @@
 	"host": "<HOST FOR DB>",
     "user": "<DB USER>",
     "passwd": "<DB password>",
-    "database": "<Table name>"
+    "database": "<Table name>",
+	"stocks": {
+        "apple": "AAPL",
+        "microsoft": "MFST",
+        "facebook": "FB",
+        "ibm": "IBM",
+        "ericsson": "ERIC",
+        "sony": "SNE",
+        "dow_jones": "DOW",
+        "google": "GOOGL"
+    }
 }

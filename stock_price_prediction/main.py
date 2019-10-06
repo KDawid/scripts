@@ -1,17 +1,14 @@
+import json
 import time
 
 from stock_price_saver import StockPriceSaver
 
 class Main:
     def __init__(self):
+        with open('config.json') as f:
+            config = json.load(f)
+        self.STOCKS = config['stocks'].keys()
         self.sleep_time = 15
-        self.STOCKS = {'apple': 'AAPL',
-                       'microsoft': 'MFST',
-                       'facebook': 'FB',
-                       'ibm': 'IBM',
-                       'ericsson': 'ERIC',
-                       'sony': 'SNE'
-                       }
 
     def run(self):
         for stock in self.STOCKS:
