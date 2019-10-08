@@ -1,10 +1,10 @@
 {
     "API_KEY": "<your API key>",
-	"host": "<HOST FOR DB>",
+    "host": "<HOST FOR DB>",
     "user": "<DB USER>",
     "passwd": "<DB password>",
     "database": "<Table name>",
-	"stocks": {
+    "stocks": {
         "apple": "AAPL",
         "microsoft": "MFST",
         "facebook": "FB",
@@ -13,5 +13,7 @@
         "sony": "SNE",
         "dow_jones": "DOW",
         "google": "GOOGL"
-    }
+    },
+    "export_folder": "exported_data",
+    "export_tar": "exported_data.tar.gz"
 }

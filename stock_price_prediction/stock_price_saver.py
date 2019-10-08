@@ -3,29 +3,21 @@ import pymysql as dbapi
 
 from pymysql.err import IntegrityError
 from stock_price_data_collector import StockPriceDataCollector
-# SQL setting
-# - GRANT ALL PRIVILEGES on *.* to 'root'@'localhost' IDENTIFIED BY '<password>';
-# - FLUSH PRIVILEGES;
+
 
 class StockPriceSaver:
-    def __init__(self, stock):
-        self.stock = stock
-        self.db_name = f'{self.stock}_stocks'
-
+    def __init__(self):
         with open('config.json') as f:
             config = json.load(f)
         host = config['host']
         user = config['user']
         passwd = config['passwd']
         database = config['database']
+        stocks = config['stocks'].keys()
 
         try:
             self.db = dbapi.connect(host=host, user=user, passwd=passwd, database=database)
-            cursor = self.db.cursor()
-            cursor.execute(f'SELECT * FROM information_schema.tables WHERE table_name = "{self.db_name}"')
-            if not cursor.fetchone():
-                print(f"Table for {stock} not exists yet, creating...")
-                cursor.execute(f'CREATE TABLE {self.db_name} (Id VARCHAR(255) PRIMARY KEY, Open FLOAT(25), High FLOAT(25), Low FLOAT(25), Close FLOAT(25), Volume FLOAT(25));')
+            self.init_db(stocks)
         except dbapi.DatabaseError as e:
             print(f'Error: {e}')
 
@@ -33,9 +25,20 @@ class StockPriceSaver:
         if self.db:
             self.db.close()
 
-    def save(self):
+    def init_db(self, stocks):
+        for stock in stocks:
+            db_name = f'{stock}_stocks'
+
+            cursor = self.db.cursor()
+            cursor.execute(f'SELECT * FROM information_schema.tables WHERE table_name = "{db_name}"')
+            if not cursor.fetchone():
+                print(f"Table for {stock} not exists yet, creating...")
+                cursor.execute(f'CREATE TABLE {db_name} (Id VARCHAR(255) PRIMARY KEY, Open FLOAT(25), High FLOAT(25), Low FLOAT(25), Close FLOAT(25), Volume FLOAT(25));')
+
+    def save(self, stock):
+        db_name = f'{stock}_stocks'
         collector = StockPriceDataCollector()
-        stock_data = collector.get_data(self.stock)
+        stock_data = collector.get_data(stock)
 
         cursor = self.db.cursor()
         n = 0
@@ -43,11 +46,18 @@ class StockPriceSaver:
             row = data.get_tuple()
 
             try:
-                sql = f'INSERT INTO {self.db_name} (Id, Open, High, Low, Close, Volume) VALUES (%s, %s, %s, %s, %s, %s);'
+                sql = f'INSERT INTO {db_name} (Id, Open, High, Low, Close, Volume) VALUES (%s, %s, %s, %s, %s, %s);'
                 cursor.execute(sql, row)
-            except IntegrityError as e:
+            except IntegrityError:
                 continue
             n += 1
-
         self.db.commit()
         print(f'{n} new items saved.')
+
+    def export(self, stock):
+        db_name = f'{stock}_stocks'
+        yield ('Date', 'Open', 'High', 'Low', 'Close', 'Volume')
+        cursor = self.db.cursor()
+        cursor.execute(f'SELECT * FROM stocks.{db_name} ORDER BY Id ASC')
+        for item in cursor.fetchall():
+            yield item
