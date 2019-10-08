@@ -30,3 +30,7 @@ https://askubuntu.com/questions/16428/showing-a-cowsay-fortune-in-every-new-term
 SQL settings:
 - GRANT ALL PRIVILEGES on *.* to 'root'@'localhost' IDENTIFIED BY '<password>';
 - FLUSH PRIVILEGES;
+
+
+print cron error example:
+0 8 * * * /usr/local/bin/myjob > /var/log/myjob.log 2>&1
