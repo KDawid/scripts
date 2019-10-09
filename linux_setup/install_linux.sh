@@ -70,6 +70,9 @@ sudo apt-get install python-selenium
 sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4
 sudo apt-get install default-jdk 
 
+pretty_title "Installing matplotlib for python..."
+sudo apt-get install python-matplotlib
+
 pretty_title "Update..."
 sudo apt update && sudo apt upgrade
 

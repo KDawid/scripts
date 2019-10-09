@@ -6,3 +6,5 @@
 
 /stock_price_prediction/config.json
 /stock_price_prediction/__pycache__/
+/stock_price_prediction/logfile.log
+/stock_price_prediction/exported_data.tar.gz

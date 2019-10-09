@@ -1,4 +1,5 @@
 import json
+import logging
 import pymysql as dbapi
 
 from pymysql.err import IntegrityError
@@ -15,11 +16,14 @@ class StockPriceSaver:
         database = config['database']
         stocks = config['stocks'].keys()
 
+        logging.basicConfig(filename='logfile.log', level=logging.INFO, format='%(asctime)s %(message)s',
+                            datefmt='%m/%d/%Y %H:%M:%S')
+
         try:
             self.db = dbapi.connect(host=host, user=user, passwd=passwd, database=database)
             self.init_db(stocks)
         except dbapi.DatabaseError as e:
-            print(f'Error: {e}')
+            logging.error(f'Error: {e}')
 
     def __del__(self):
         if self.db:
@@ -32,7 +36,7 @@ class StockPriceSaver:
             cursor = self.db.cursor()
             cursor.execute(f'SELECT * FROM information_schema.tables WHERE table_name = "{db_name}"')
             if not cursor.fetchone():
-                print(f"Table for {stock} not exists yet, creating...")
+                logging.info(f"Table for {stock} not exists yet, creating...")
                 cursor.execute(f'CREATE TABLE {db_name} (Id VARCHAR(255) PRIMARY KEY, Open FLOAT(25), High FLOAT(25), Low FLOAT(25), Close FLOAT(25), Volume FLOAT(25));')
 
     def save(self, stock):
@@ -52,7 +56,7 @@ class StockPriceSaver:
                 continue
             n += 1
         self.db.commit()
-        print(f'{n} new items saved.')
+        logging.info(f'{n} new items saved for {stock}.')
 
     def export(self, stock):
         db_name = f'{stock}_stocks'
