@@ -12,7 +12,15 @@
         "ericsson": "ERIC",
         "sony": "SNE",
         "dow_jones": "DOW",
-        "google": "GOOGL"
+        "google": "GOOGL",
+        "sears_holdings": "SHLDQ",
+        "titan": "TTNP",
+        "starbucks": "SBUX",
+        "bank_of_america": "BAC",
+        "twitter": "TWTR",
+        "nvidia": "NVDA",
+        "intel": "INTC",
+        "amd": "AMD"
     },
     "export_folder": "exported_data",
     "export_tar": "exported_data.tar.gz"
