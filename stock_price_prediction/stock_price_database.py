@@ -1,5 +1,5 @@
-import copy
 import json
+import logging
 import matplotlib.pyplot as plt
 
 from stock_price_data_item import StockPriceDataItem
@@ -7,17 +7,22 @@ from stock_price_data_item import StockPriceDataItem
 
 class StockPriceDataBase:
     def __init__(self, request):
+        logging.basicConfig(filename='logfile.log', level=logging.INFO, format='%(asctime)s %(message)s',
+                            datefmt='%m/%d/%Y %H:%M:%S')
         self.database = set()
         self.update_data(request)
 
     def update_data(self, request):
-        data = json.loads(request.text)
-        self.meta_data = copy.deepcopy(data['Meta Data'])
+        try:
+            data = json.loads(request.text)
+            self.meta_data = data['Meta Data']
 
-        data_temp = copy.deepcopy(data['Time Series (1min)'])
-        for date_time, data_item in data_temp.items():
-            item = StockPriceDataItem(date_time, data_item)
-            self.database.add(item)
+            data_temp = data['Time Series (1min)']
+            for date_time, data_item in data_temp.items():
+                item = StockPriceDataItem(date_time, data_item)
+                self.database.add(item)
+        except:
+            logging.error(f'Could not parse data from result: {request.text}')
 
     def plot(self, start_date, end_date):
         start = datetime.datetime.strptime(start_date, '%Y-%m-%d %H:%M:%S')

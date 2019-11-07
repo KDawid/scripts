@@ -30,7 +30,7 @@ class Main:
         logging.info('Saving stock price data has finished.')
 
     def export(self):
-        logging.info(f'Exporting stock price data...')
+        logging.info('Exporting stock price data...')
         self.__clean_exported_data()
         for stock in self.STOCKS:
             self.__export_stock(stock)

@@ -6,7 +6,7 @@
     "database": "<Table name>",
     "stocks": {
         "apple": "AAPL",
-        "microsoft": "MFST",
+        "microsoft": "MSFT",
         "facebook": "FB",
         "ibm": "IBM",
         "ericsson": "ERIC",
@@ -20,7 +20,13 @@
         "twitter": "TWTR",
         "nvidia": "NVDA",
         "intel": "INTC",
-        "amd": "AMD"
+        "amd": "AMD",
+        "tesla": "TSLA",
+        "tesco": "TSCO",
+        "toyota": "TM",
+        "volkswagen": "VWAGY",
+        "sainsbury": "JSAIY",
+        "lufthansa": "LHA.HAM"
     },
     "export_folder": "exported_data",
     "export_tar": "exported_data.tar.gz"
