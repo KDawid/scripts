@@ -1,5 +1,6 @@
 {
-    "API_KEY": "<your API key>",
+    "ALPHA_API_KEY": "<your Alpha Vantage API key>",
+	"NEWS_API_KEY": "<your News API key>",
     "host": "<HOST FOR DB>",
     "user": "<DB USER>",
     "passwd": "<DB password>",

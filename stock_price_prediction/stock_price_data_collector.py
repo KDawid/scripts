@@ -7,7 +7,7 @@ class StockPriceDataCollector:
     def __init__(self):
         with open('config.json') as f:
             config = json.load(f)
-        self.API_KEY = config['API_KEY']
+        self.API_KEY = config['ALPHA_API_KEY']
 
         self.STOCKS = config['stocks']
 
