@@ -56,4 +56,7 @@ sudo pip3 install google
 pretty_title "Installing mysql..."
 sudo pip3 install PyMySQL
 
+pretty_title "Installing keras..."
+sudo pip3 install keras
+
 pretty_title "Done."

@@ -1,0 +1,30 @@
+212.48.249.101 - - [30/Nov/2019 09:27:20] "GET /index.html HTTP/1.1" 200 -
+212.48.249.101 - - [30/Nov/2019 09:27:20] "GET /stream.mjpg HTTP/1.1" 200 -
+192.168.0.206 - - [30/Nov/2019 09:27:30] "GET /index.html HTTP/1.1" 200 -
+192.168.0.206 - - [30/Nov/2019 09:27:31] "GET /stream.mjpg HTTP/1.1" 200 -
+192.168.0.206 - - [30/Nov/2019 09:27:31] code 404, message Not Found
+192.168.0.206 - - [30/Nov/2019 09:27:31] "GET /favicon.ico HTTP/1.1" 404 -
+WARNING:root:Removed streaming client ('192.168.0.206', 43368): [Errno 104] Connection reset by peer
+192.168.0.206 - - [30/Nov/2019 09:48:40] "GET /stream.mjpg HTTP/1.1" 200 -
+192.168.0.206 - - [30/Nov/2019 09:48:40] code 404, message Not Found
+192.168.0.206 - - [30/Nov/2019 09:48:40] "GET /favicon.ico HTTP/1.1" 404 -
+WARNING:root:Removed streaming client ('192.168.0.206', 43508): [Errno 104] Connection reset by peer
+212.48.249.101 - - [30/Nov/2019 11:05:35] "GET /index.html HTTP/1.1" 200 -
+WARNING:root:Removed streaming client ('212.48.249.101', 57382): [Errno 32] Broken pipe
+212.48.249.101 - - [30/Nov/2019 11:05:35] "GET /stream.mjpg HTTP/1.1" 200 -
+66.249.81.17 - - [30/Nov/2019 11:06:53] "GET /index.html HTTP/1.1" 200 -
+66.249.81.13 - - [30/Nov/2019 11:06:53] code 404, message Not Found
+66.249.81.13 - - [30/Nov/2019 11:06:53] "GET /favicon.ico HTTP/1.1" 404 -
+66.249.81.13 - - [30/Nov/2019 11:06:53] "GET /stream.mjpg HTTP/1.1" 200 -
+WARNING:root:Removed streaming client ('66.249.81.13', 58062): [Errno 32] Broken pipe
+212.48.249.101 - - [30/Nov/2019 11:10:23] "GET /index.html HTTP/1.1" 200 -
+212.48.249.101 - - [30/Nov/2019 11:10:24] "GET /stream.mjpg HTTP/1.1" 200 -
+WARNING:root:Removed streaming client ('212.48.249.101', 57993): [Errno 32] Broken pipe
+212.48.249.101 - - [30/Nov/2019 11:14:22] "GET /index.html HTTP/1.1" 200 -
+WARNING:root:Removed streaming client ('212.48.249.101', 58041): [Errno 32] Broken pipe
+212.48.249.101 - - [30/Nov/2019 11:14:22] "GET /stream.mjpg HTTP/1.1" 200 -
+WARNING:root:Removed streaming client ('212.48.249.101', 58071): [Errno 32] Broken pipe
+66.249.81.17 - - [30/Nov/2019 12:22:53] "GET /stream.mjpg HTTP/1.1" 200 -
+66.249.81.17 - - [30/Nov/2019 12:22:53] code 404, message Not Found
+66.249.81.17 - - [30/Nov/2019 12:22:53] "GET /favicon.ico HTTP/1.1" 404 -
+WARNING:root:Removed streaming client ('66.249.81.17', 61168): [Errno 32] Broken pipe
