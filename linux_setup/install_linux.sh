@@ -73,6 +73,9 @@ sudo apt-get install default-jdk
 pretty_title "Installing matplotlib for python..."
 sudo apt-get install python-matplotlib
 
+pretty_title "Installing nload..."
+sudo apt-get install nload
+
 pretty_title "Update..."
 sudo apt update && sudo apt upgrade
 
