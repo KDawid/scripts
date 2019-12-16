@@ -59,4 +59,7 @@ sudo pip3 install PyMySQL
 pretty_title "Installing keras..."
 sudo pip3 install keras
 
+pretty_title "Installing scikit-image..."
+sudo pip3 install scikit-image
+
 pretty_title "Done."

@@ -76,6 +76,12 @@ sudo apt-get install python-matplotlib
 pretty_title "Installing nload..."
 sudo apt-get install nload
 
+pretty_title "Installing usb camera package..."
+sudo apt install fswebcam
+
+pretty_title "Installing libatlas..."
+sudo apt-get install libatlas-base-dev
+
 pretty_title "Update..."
 sudo apt update && sudo apt upgrade
 
