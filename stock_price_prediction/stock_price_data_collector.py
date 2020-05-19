@@ -1,9 +1,17 @@
 import json
 import requests
+import yfinance as yf
 
-from stock_price_database import StockPriceDataBase
+from stock_price_database import AlphavantageStockPriceDataBase
+from stock_price_database import YfinanceStockPriceDataBase
+
 
 class StockPriceDataCollector:
+    def get_data(self, stock):
+        raise NotImplementedError("Stock Price Data Cololector should be implemented!")
+
+
+class AlphavantageStockPriceDataCollector(StockPriceDataCollector):
     def __init__(self):
         with open('config.json') as f:
             config = json.load(f)
@@ -19,5 +27,19 @@ class StockPriceDataCollector:
 
         result = requests.get(
             f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={self.STOCKS[stock]}&interval=1min&outputsize=full&apikey={self.API_KEY}')
-        db = StockPriceDataBase(result)
+        db = AlphavantageStockPriceDataBase(result)
+        return db.database
+
+class YfinanceStockPriceDataCollector(StockPriceDataCollector):
+    def __init__(self):
+        with open('config.json') as f:
+            config = json.load(f)
+        self.STOCKS = config['stocks']
+
+    def get_data(self, stock):
+        if stock not in self.STOCKS:
+            raise ValueError('Unknown stock:', stock)
+
+        data = yf.download(tickers=self.STOCKS[stock], period='7d', interval="1m")
+        db = YfinanceStockPriceDataBase(data)
         return db.database

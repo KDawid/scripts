@@ -44,8 +44,9 @@ class Main:
     def __save_stock(self, stock):
         logging.debug(f'Saving data for {stock}')
         self.saver.save(stock)
-        logging.debug(f'Sleep {self.sleep_time} seconds to avoid API overloading...')
-        time.sleep(self.sleep_time)
+        # Sleep is needed only for alphavantage
+        # logging.debug(f'Sleep {self.sleep_time} seconds to avoid API overloading...')
+        # time.sleep(self.sleep_time)
 
     def __export_stock(self, stock):
         with open(f'{self.EXPORT_FOLDER}/{stock}.csv', 'w') as f:

@@ -3,7 +3,8 @@ import logging
 import pymysql as dbapi
 
 from pymysql.err import IntegrityError
-from stock_price_data_collector import StockPriceDataCollector
+from stock_price_data_collector import AlphavantageStockPriceDataCollector
+from stock_price_data_collector import YfinanceStockPriceDataCollector
 
 
 class StockPriceSaver:
@@ -16,7 +17,9 @@ class StockPriceSaver:
         database = config['database']
         stocks = config['stocks'].keys()
 
-        logging.basicConfig(filename='logfile.log', level=logging.INFO, format='%(asctime)s %(message)s',
+        logging.basicConfig(filename='logfile.log',
+                            level=logging.INFO,
+                            format='%(asctime)s [%(filename)s:%(lineno)s] %(message)s',
                             datefmt='%m/%d/%Y %H:%M:%S')
 
         try:
@@ -41,14 +44,13 @@ class StockPriceSaver:
 
     def save(self, stock):
         db_name = f'{stock}_stocks'
-        collector = StockPriceDataCollector()
+        collector = YfinanceStockPriceDataCollector()
         stock_data = collector.get_data(stock)
 
         cursor = self.db.cursor()
         n = 0
         for data in stock_data:
             row = data.get_tuple()
-
             try:
                 sql = f'INSERT INTO {db_name} (Id, Open, High, Low, Close, Volume) VALUES (%s, %s, %s, %s, %s, %s);'
                 cursor.execute(sql, row)
